@@ -12,19 +12,19 @@ public class Main {
            int min=1;
            int max=100; 
            int target=random.nextInt(min,max+1);
-           while(!correct&&attempts<=10){
+           while(!correct&&attempts<7){
                attempts++;
-               System.out.println("ENTER YOUR GUESS: ");
+               System.out.print("ENTER YOUR GUESS: ");
                int guess=sc.nextInt();
                if(guess>100||guess<1){
                 System.out.println("INVALID INPUT GUESS A NUMBER BETWEEN(1-100)");
                 continue;
                }
                 if(guess>target){
-                 System.out.println("YOUR GUESS IS TOO HIGH: ");
+                 System.out.println("YOUR GUESS IS TOO HIGH");
                 }
                 else if(guess<target){
-                 System.out.println("YOUR GUESS IS TOO LOW: ");
+                 System.out.println("YOUR GUESS IS TOO LOW");
                 }
                 else{
                  System.out.println("CORRECT! YOU HAVE GUESSED IN "+attempts+" ATTEMPTS" );
@@ -36,7 +36,7 @@ public class Main {
                 System.out.println("GAME OVER! THE TARGET IS "+target);
 
             }
-            System.out.println("DO YOU WANT TO PLAY AGAIN(YES/NO): ");
+            System.out.print("DO YOU WANT TO PLAY AGAIN(YES/NO): ");
             sc.nextLine();
             String answer=sc.nextLine().toLowerCase();
             playagain=answer.equals("yes");
